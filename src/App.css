@@ -1,0 +1,955 @@
+@font-face {
+  font-family: "Satoshi-Regular";
+  src: url("./components/assets/satoshi-fonts/fonts/Satoshi-Regular.woff2") format("woff2"),
+    url("./components/assets/satoshi-fonts/fonts/Satoshi-Regular.woff") format("woff"),
+    url("./components/assets/satoshi-fonts/fonts/Satoshi-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.fixed_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+
+.logo {
+  font-family: "Satoshi-Regular";
+  font-size: 20px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.location_details {
+  display: flex;
+  padding: 8px 20px;
+  border: 1px solid rgba(128, 128, 128, 0.297);
+  border-radius: 30px;
+}
+
+.location_details:hover{
+  cursor: pointer;
+}
+.location_name {
+  font-size: 11px;
+}
+
+.search_input {
+  position: relative;
+}
+.search_input input {
+  width: 350px;
+  padding: 10px 40px;
+  border-radius: 30px;
+  border: 1px solid rgba(128, 128, 128, 0.297);
+  outline: none;
+}
+
+.search_input_icon {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.flatmate_spaces {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 12px 40px;
+}
+
+.flatmate_spaces .rightside .select_options {
+  padding: 8px 10px;
+  border: 1px solid rgba(128, 128, 128, 0.297);
+  border-radius: 6px;
+}
+
+.flatmate_spaces .rightside .select_options select option {
+  margin-top: 50px !important;
+}
+
+.flatmate_spaces .rightside .select_options select {
+  border: none;
+  outline: none;
+}
+
+.filter_icon {
+  height: 20px;
+  width: 20px;
+}
+
+.flatmate_spaces .rightside .filters {
+  padding: 8px 25px;
+  border: 1px solid rgba(128, 128, 128, 0.297);
+  border-radius: 6px;
+}
+
+.flatmate_spaces .rightside .filters:hover{
+background-color: rgba(0, 0, 0, 0.841);
+color: white;
+cursor: pointer;
+}
+
+.menu_bar:hover .menu_bar_icon {
+  color: rgb(71 175 131);
+}
+
+/* ------------------------------------------------------MENU MODAL------------------------------------------------------------------ */
+
+.modals {
+  display: none;
+}
+
+.menu_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.234);
+}
+
+.menu_modal_content {
+  height: 95vh;
+  width: 95%;
+  margin: 20px 40px;
+  border-radius: 10px;
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+
+
+.modal_menu {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  font-size: 40px;
+  font-weight: bolder;
+  gap: 20px;
+}
+
+.modal_menu a {
+  text-decoration: none;
+  color: black;
+}
+.modal_menu .box1 div,
+.modal_menu .box2 div {
+  padding-bottom: 30px;
+  padding-right: 30px;
+}
+
+.modal_cross_icon {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+
+/* ----------------------------------------------------MENU MODAL END-------------------------------------------------------------- */
+
+
+
+/* ----------------------------------------------------FILTER MODAL-------------------------------------------------------------- */
+
+.filter_modals {
+  display: none;
+}
+
+.filter_menu_overlay {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.234);
+}
+
+.filter_menu_modal_content {
+  height: 75vh;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 200px;
+  border-radius: 10px;
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+
+.filter_modal_menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  font-size: 40px;
+  font-weight: bolder;
+  gap: 20px;
+}
+
+.filter_modal_menu a {
+  text-decoration: none;
+  color: black;
+}
+
+
+.filter_modal_cross_icon {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+/* ----------------------------------------------------FILTER MODAL END-------------------------------------------------------------- */
+
+
+
+/* ----------------------------------------------------SORT MODAL-------------------------------------------------------------- */
+
+.sort_modals {
+  display: none;
+}
+
+.sort_menu_overlay {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.234);
+}
+
+.sort_menu_modal_content {
+  height: 75vh;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 200px;
+  border-radius: 10px;
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+
+.sort_modal_menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  font-size: 40px;
+  font-weight: bolder;
+  gap: 20px;
+}
+
+.sort_modal_menu a {
+  text-decoration: none;
+  color: black;
+}
+
+
+.sort_modal_cross_icon {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+}
+
+/* ----------------------------------------------------SORT MODAL END-------------------------------------------------------------- */
+
+
+
+/* ----------------------------------------------------LOCATION MODAL-------------------------------------------------------------- */
+
+.location_modals {
+  display: none;
+}
+
+.location_menu_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.234);
+}
+
+.location_menu_modal_content {
+  height: 60vh;
+  width: 50%;
+  margin:140px auto;
+  border-radius: 10px;
+  display: flex;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.location_modal_menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  font-size: 40px;
+  font-weight: bolder;
+  height: 400px;
+  gap: 20px;
+  background-color: white;
+  overflow-y: scroll;
+}
+
+.location_modal_menu .location_options_menu{
+  padding: 20px 40px;
+  margin-top: 90px ;
+ display: flex;
+ gap: 50px;
+ flex-wrap: wrap;
+ 
+}
+
+.location_modal_menu .location_options_menu .location_div{
+  padding: 0 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-decoration: none;
+  color: black;
+  height: 70px;
+  width: 80px;
+}
+
+.location_modal_menu .location_options_menu .location_div img{
+  height: 48px;
+  width: 48px;
+}
+
+.location_heading {
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+ display: flex;
+ justify-content: space-between;
+ width: 100%;
+ padding: 25px 30px;
+ height: 70px;
+ border-bottom: 1px solid gray;
+}
+
+/* ----------------------------------------------------LOCATION MODAL END-------------------------------------------------------------- */
+
+.cant_find_container {
+  background: url("https://thehelloworld.com/_next/static/media/homeFooter.fe9a17a5.png"),
+    rgba(0, 128, 0, 0.204);
+  background-repeat: repeat;
+  background-blend-mode: darken, luminosity;
+  background-size: 200px;
+  padding: 30px 100px;
+}
+
+.cant_find_inputs input {
+  border: none;
+  outline: none;
+}
+
+.cant_find_location {
+  position: relative;
+}
+.cant_find_location_icon {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+}
+
+.about_flatmate_container {
+  padding: 80px;
+}
+
+.footer_container {
+  background-color: rgba(250, 250, 2500);
+  padding: 30px 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.spaces_container {
+  margin-top: 200px;
+}
+
+.flats_container {
+  margin-left: 50px;
+}
+
+.flats_container .flats {
+  background-color: white;
+  box-shadow: -1px 0px 4px 0px #00000096;
+  border-radius: 8px;
+}
+
+.flats_container .flats .img_container {
+  border-radius: 8px;
+  overflow: hidden;
+  width: 266px;
+  height: 200px;
+}
+.flat_details {
+  width: 275px;
+}
+.flat_details .ammenities .horizon_div{
+  height: 2px;
+  width: 120px;
+  border-top: 1px solid gray;
+}
+
+.facilitiess .box p {
+  font-size: 12px;
+}
+
+.req_callback {
+  background-color: rgb(44 164 113);
+  color: white;
+  padding: 3px 6px;
+  border-radius: 8px;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 500;
+}
+.prices {
+  border-right: 1px solid gray;
+}
+
+.fa-arrow-up-right-from-square {
+  font-size: 10px;
+}
+
+.rent p {
+  font-size: 12px;
+}
+
+/* -------------------------------------------------------Contact------------------------------------------------------------------------- */
+
+
+.contact_nav_contact span{
+  font-size: 13px;
+}
+
+.contact_hello_banner{
+  margin-top: 90px;
+  background-color: rgba(250, 250, 2500);
+  height: 480px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact_hello_banner h2{
+  font-size: 150px;
+}
+
+.contact_help_container{
+  padding: 80px 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact_help_container .contact_address{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: "Satoshi-Regular";
+}
+.contact_form .contact_form_container{
+  width: 460px;
+  padding: 15px;
+  box-shadow: 1px 0px 20px #00000069;
+  font-family: "Satoshi-Regular";
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.contact_form .contact_form_container input, label{
+  margin-bottom: 10px;
+}
+
+.contact_form .contact_form_container input{
+  font-weight: 600;
+  color: rgba(128, 128, 128, 0.207);
+}
+
+.contact_form .contact_form_container button{
+  width: 100%;
+  border: none;
+  color: white;
+  background-color:rgb(44 164 113);
+  padding: 8px 0;
+  margin: 20px 0;
+  font-family: "Satoshi-Regular";
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.contact_map_container{
+  background-color: #fafafa;
+  padding: 20px 30px;
+  margin: 50px auto;
+}
+
+
+
+
+/* -------------------------------------------------------Contact end---------------------------------------------------------------------- */
+
+
+
+/* ------------------------------------------------------Privacy Policy--------------------------------------------------------------------- */
+
+
+.privacy_policy_banner{
+  margin-top: 90px;
+  background-color: rgba(250, 250, 2500);
+  height: 250px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.privacy_policy_banner h2{
+  font-size: 50px;
+}
+
+.policy_details_container{
+  font-family: "Satoshi-Regular";
+}
+
+.policies ul li{
+  padding-bottom: 10px;
+}
+
+.policy_details_container .policies{
+  padding: 20px;
+}
+
+
+/* ------------------------------------------------------Privacy Policy end----------------------------------------------------------------- */
+
+
+
+
+/* -----------------------------------------------for home Owner--------------------------------------------------------------------------- */
+
+
+.home_owner{
+  background: url("https://hw-prod-static-assets.s3.ap-south-1.amazonaws.com/marketing/website/owner-bg.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 50%;
+}
+
+.owner_parallax{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.owner_parallax h2{
+ font-size: 60px;
+ color: white;
+ margin-top: 250px;
+  text-align: center;
+}
+
+.home_owner_banner_img_box{
+  margin-top: 50px;
+  height: 80px;
+  background: url("https://hw-prod-static-assets.s3.ap-south-1.amazonaws.com/marketing/website/dot-repeat.svg");
+  background-repeat: repeat-x;
+  width: 50%;
+}
+
+.owner_different{
+  background-color: white;
+  font-family: "Satoshi-regular";
+}
+
+.owner_different .container{
+  padding: 100px 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.owner_different .container .owner_box1, .owner_box2{
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  text-align: center;
+}
+
+.list_property_container{
+  background-color: rgba(250, 250, 250);
+  font-family: "Satoshi-Regular";
+  padding: 50px 150px;
+}
+
+.list_property_form{
+  background-color: white;
+  padding: 20px 200px;
+  margin: 50px 200px;
+}
+
+.list_property_form .input_div{
+display: flex;
+gap: 10px;
+margin: 20px 0;
+}
+
+.list_property_form .input_div label{
+width: 70px;
+}
+.imp_sign{
+  font-size: 7px;
+  /* margin-bottom: 15px; */
+  display: inline-block;
+}
+
+.list_property_form button{
+margin-left: 200px;
+}
+
+
+/* -----------------------------------------------for home Owner end----------------------------------------------------------------------- */
+
+
+
+@media only screen and (max-width: 768px) {
+  .logo {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+  }
+  .location_details{
+    display: none;
+  }
+  .search_input input {
+    width: 100%;
+    padding: 10px 10px 10px 35px;
+    border-radius: 30px;
+    border: 1px solid rgba(128, 128, 128, 0.297);
+    outline: none;
+  }
+  .flatmate_spaces .leftside, .select_options{
+    display: none;
+  }
+
+  #sortData select option{
+    margin-top: 10px;
+  }
+
+
+  .cant_find_container{
+    padding: 30px 16px;
+  }
+   
+  .cant_find_inputs{
+    flex-direction: column;
+  }
+  .cant_find_location input{
+    width: 100%;
+  }
+  .cant_find_inputs button{
+    margin-top: 8px ;
+  }
+  .about_flatmate_container{
+    padding: 60px 16px;
+  }
+
+  .footer_boxes_3{
+    flex-direction: column;
+    padding: 20px 0 !important;
+  }
+  .footer_container{
+    flex-direction: column;
+    padding: 40px 16px;
+  }
+  .footer_boxes_1{
+    padding: 20px 0 !important;
+  }
+  .flats_container {
+    margin: 0;
+  }
+  .flats_container .flats {
+    margin: 15px 10px;
+    width: 100%;
+  }
+  .flats_container .flats .img_container{
+    width: 100%;
+  }
+  .flats_container .flats .img_container img{
+    width: 100%;
+  }
+  .flats_container .flats .flat_details{
+    width: 100%;
+  }
+  .spaces_container{
+    margin-top: 120px;
+  }
+
+  /*-------------------- Modal----------------------------- */
+  .modal_menu{
+    padding-top: 40px;
+    display: block;
+    font-size: 25px;
+    margin: 0;
+    gap: 0;
+  }
+  .menu_modal_content{
+    height: 97vh;
+  width: 100%;
+  margin: 0px;
+  margin-top: 40px;
+  border-radius: 10px;
+  display: flex;
+  position: relative;
+  z-index: 1;
+  }
+  .menu_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.234);
+  }
+  .modal_menu .box1 div,
+.modal_menu .box2 div {
+  padding-right: 0;
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+
+/*------------------------------------------------------------------------------------- Filter modal------------------------------------- */
+
+.filter_modal_menu{
+  padding-top: 40px;
+  display: block;
+  font-size: 25px;
+  margin: 0;
+  gap: 0;
+}
+.filter_menu_modal_content{
+  height: 70vh;
+width: 100%;
+margin: 0px;
+margin-top: 340px;
+border-radius: 10px;
+display: flex;
+position: relative;
+z-index: 1;
+}
+.filter_menu_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.234);
+}
+
+.filter_modal_cross_icon {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+}
+.filter_modal_menu h6{
+  margin-left: 12px;
+}
+
+
+/* ---------------------------------------------------Filter Modal End------------------------ */
+
+
+
+
+
+/*------------------------------------------------------------------------------------- Filter modal------------------------------------- */
+
+.sort_modal_menu{
+  padding-top: 40px;
+  display: block;
+  font-size: 25px;
+  margin: 0;
+  gap: 0;
+}
+.sort_menu_modal_content{
+  height: 70vh;
+width: 100%;
+margin: 0px;
+margin-top: 340px;
+border-radius: 10px;
+display: flex;
+position: relative;
+z-index: 1;
+}
+.sort_menu_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.234);
+}
+
+
+
+/* ----------------------------------------------------------------Sort Modal End------------------------------------------------ */
+
+
+/* -----------------------------------------------------------------Location Modal------------------------------------------- */
+
+
+.location_menu_modal_content {
+  height: 60vh;
+  width: 100%;
+  margin-top:340px;
+  border-radius: 10px;
+  display: flex;
+  position: relative;
+  border-radius: 8px;
+}
+
+.location_modal_menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  font-size: 40px;
+  font-weight: bolder;
+  gap: 20px;
+  background-color: white;
+  overflow-y: scroll;
+}
+
+.location_modal_menu .location_options_menu{
+  margin-top: 50px ;
+  padding: 10px;
+  gap: 5px;
+}
+
+.location_modal_menu .location_options_menu .location_div img{
+  height: 40px;
+  width: 40px;
+}
+.location_modal_menu .location_options_menu .location_div{
+  font-size: 11px;
+  padding: 0 7px;
+}
+
+/* -----------------------------------------------------------------Location Modal End------------------------------------------- */
+
+.mob_location_details{
+  display: flex;
+  font-size: 14px;
+  padding: 8px 12px;
+}
+
+.flatmate_spaces .rightside .filters{
+padding: 8px 12px;
+}
+.flatmate_spaces .rightside{
+gap: 12px;
+}
+
+/* -----------------Contact----------------------------------------------------------------------------------- */
+
+.contact_hello_banner{
+  height: 300px;
+  margin-top: 60px;
+}
+
+.contact_hello_banner h2{
+  font-size: 80px;
+}
+
+.contact_help_container{
+  flex-direction: column;
+  gap: 50px;
+}
+
+.contact_form .contact_form_container{
+  width: 100%;
+}
+
+.contact_help_container{
+  padding: 20px;
+
+}
+
+/* -----------------Contact end----------------------------------------------------------------------------------- */
+
+
+
+
+/* -------------------------home owner----------------------------------------------------------------------------- */
+
+.owner_parallax h2{
+  margin-top: 250px;
+  text-align: center;
+  font-size: 30px;
+  color: white;
+ }
+
+ .owner_different .container .owner_box1, .owner_box2{
+  flex-direction: column;
+ }
+
+ .owner_different .container{
+  padding: 50px 20px;
+ }
+
+ .owner_different .boxex{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+ }
+
+ .list_property_container{
+  padding: 50px 10px;
+ }
+
+ .list_property_form{
+  margin: 50px 0;
+  padding: 20px 15px;
+ }
+
+ .list_property_form button{
+  margin-left:20px ;
+ }
+
+ .list_property_form .input_div{
+ flex-direction: column;
+ align-items: start;
+ gap: 0;
+ }
+
+ .list_property_form .input_div label{
+  width: 100%;
+  }
+
+/* -------------------------home owner end ------------------------------------------------------------------------- */
+
+}

@@ -25,7 +25,7 @@ function Header() {
 
   return (
     <div className="fixed_container">
-      <nav className="py-3 px-4">
+      <nav className="py-3 px-3">
         <div className="navbar_left d-flex align-items-center gap-4">
           <Link to="/" className="logo nav-link">
             <span>Flat</span>

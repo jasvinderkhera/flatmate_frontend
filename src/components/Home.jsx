@@ -1,6 +1,16 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
 
 function Home() {
+  const[data1,setData1] = useState([])
+  const[data2,setData2] = useState([])
+
+  useEffect(()=>{
+    fetch("https://raw.githubusercontent.com/jasvinderkhera/Fake-Server/main/FlatMateFlats.json").then(response => response.json()).then((data) => {
+    console.log(data)
+    
+    })
+  },[])
   return (
     <div>
         <div className="container spaces_container py-5">

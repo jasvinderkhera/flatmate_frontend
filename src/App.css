@@ -654,6 +654,10 @@ margin-left: 200px;
     border: 1px solid rgba(128, 128, 128, 0.297);
     outline: none;
   }
+
+  .flatmate_spaces{
+    padding: 12px 25px;
+  }
   .flatmate_spaces .leftside, .select_options{
     display: none;
   }

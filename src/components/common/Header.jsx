@@ -20,6 +20,7 @@ function Header() {
   let decisionInput = useLocation();
     const [navbar,setNavbar] = useState("hide")
     const [locationModal,setLocationModal] = useState("hide")
+    const [location,setLocation] = useState("Delhi")
     const [filterModal,setFilterModal] = useState("hide")
     const [sortModal,setSortModal] = useState("hide")
 
@@ -41,7 +42,7 @@ function Header() {
             </div>
             <div className="location_name">
               <span className="text-secondary">You are in</span>
-              <p className="mb-0 fw-bold">Delhi</p>
+              <p className="mb-0 fw-bold">{location}</p>
             </div>
           </div>
         </div>
@@ -136,7 +137,10 @@ function Header() {
             </div>
             <div className="location_modal_menu">
               <div className="location_options_menu">
-                <a href="JavaScript:void(0)" className=" location_div">
+                <a href="JavaScript:void(0)" className=" location_div" onClick={()=>{
+                  setLocation("Banglore")
+                   setLocationModal("hide")
+                }}>
                   <img
                     src={banglore}
                     alt=""
@@ -145,7 +149,10 @@ function Header() {
                     <h6>Banglore</h6>
                   </div>
                 </a>
-                <a href="JavaScript:void(0)" className=" location_div">
+                <a href="JavaScript:void(0)" className=" location_div" onClick={()=>{
+                  setLocation("Coimbatore")
+                   setLocationModal("hide")
+                }}>
                   <img
                     src={coimbatore}
                     alt=""
@@ -154,7 +161,10 @@ function Header() {
                     <h6>Coimbatore</h6>
                   </div>
                 </a>
-                <a href="JavaScript:void(0)" className=" location_div">
+                <a href="JavaScript:void(0)" className=" location_div" onClick={()=>{
+                  setLocation("Delhi")
+                   setLocationModal("hide")
+                }}>
                   <img
                     src={delhi}
                     alt=""
@@ -163,7 +173,10 @@ function Header() {
                     <h6>Delhi</h6>
                   </div>
                 </a>
-                <a href="JavaScript:void(0)" className=" location_div">
+                <a href="JavaScript:void(0)" className=" location_div" onClick={()=>{
+                  setLocation("Gurugram")
+                   setLocationModal("hide")
+                }}>
                   <img
                     src={gurugram}
                     alt=""
@@ -172,7 +185,10 @@ function Header() {
                     <h6>Gurugram</h6>
                   </div>
                 </a>
-                <a href="JavaScript:void(0)" className=" location_div">
+                <a href="JavaScript:void(0)" className=" location_div" onClick={()=>{
+                  setLocation("Hyderabad")
+                   setLocationModal("hide")
+                }}>
                   <img
                     src={hyderabad}
                     alt=""
@@ -181,7 +197,10 @@ function Header() {
                     <h6>Hyderabad</h6>
                   </div>
                 </a>
-                <a href="JavaScript:void(0)" className=" location_div">
+                <a href="JavaScript:void(0)" className=" location_div" onClick={()=>{
+                  setLocation("Indore")
+                   setLocationModal("hide")
+                }}>
                   <img
                     src={indore}
                     alt=""
@@ -190,7 +209,10 @@ function Header() {
                     <h6>Indore</h6>
                   </div>
                 </a>
-                <a href="JavaScript:void(0)" className=" location_div">
+                <a href="JavaScript:void(0)" className=" location_div" onClick={()=>{
+                  setLocation("Jaipur")
+                   setLocationModal("hide")
+                }}>
                   <img
                     src={jaipur}
                     alt=""
@@ -199,7 +221,10 @@ function Header() {
                     <h6>Jaipur</h6>
                   </div>
                 </a>
-                <a href="JavaScript:void(0)" className=" location_div">
+                <a href="JavaScript:void(0)" className=" location_div" onClick={()=>{
+                  setLocation("Kolkata")
+                   setLocationModal("hide")
+                }}>
                   <img
                     src={kolkata}
                     alt=""
@@ -208,7 +233,10 @@ function Header() {
                     <h6>Kolkata</h6>
                   </div>
                 </a>
-                <a href="JavaScript:void(0)" className=" location_div">
+                <a href="JavaScript:void(0)" className=" location_div" onClick={()=>{
+                  setLocation("Kota")
+                   setLocationModal("hide")
+                }}>
                   <img
                     src={kota}
                     alt=""
@@ -217,7 +245,10 @@ function Header() {
                     <h6>Kota</h6>
                   </div>
                 </a>
-                <a href="JavaScript:void(0)" className=" location_div">
+                <a href="JavaScript:void(0)" className=" location_div" onClick={()=>{
+                  setLocation("Mumbai")
+                   setLocationModal("hide")
+                }}>
                   <img
                     src={mumbai}
                     alt=""
@@ -226,7 +257,10 @@ function Header() {
                     <h6>Mumbai</h6>
                   </div>
                 </a>
-                <a href="JavaScript:void(0)" className=" location_div">
+                <a href="JavaScript:void(0)" className=" location_div" onClick={()=>{
+                  setLocation("Noida")
+                   setLocationModal("hide")
+                }}>
                   <img
                     src={noida}
                     alt=""
@@ -235,7 +269,10 @@ function Header() {
                     <h6>Noida</h6>
                   </div>
                 </a>
-                <a href="JavaScript:void(0)" className=" location_div">
+                <a href="JavaScript:void(0)" className=" location_div" onClick={()=>{
+                  setLocation("Greater Noida")
+                   setLocationModal("hide")
+                }}>
                   <img
                     src={greater_noida}
                     alt=""
@@ -244,7 +281,10 @@ function Header() {
                     <h6>Greater Noida</h6>
                   </div>
                 </a>
-                <a href="JavaScript:void(0)" className=" location_div">
+                <a href="JavaScript:void(0)" className=" location_div" onClick={()=>{
+                  setLocation("Pune")
+                   setLocationModal("hide")
+                }}>
                   <img
                     src={pune}
                     alt=""
@@ -253,7 +293,10 @@ function Header() {
                     <h6>Pune</h6>
                   </div>
                 </a>
-                <a href="JavaScript:void(0)" className=" location_div">
+                <a href="JavaScript:void(0)" className=" location_div" onClick={()=>{
+                  setLocation("Visakhapatnam")
+                   setLocationModal("hide")
+                }}>
                   <img
                     src={visakhapatnam}
                     alt=""
@@ -293,7 +336,7 @@ function Header() {
               <i className="fa-solid fa-location-dot fs-5"></i>
             </div>
             <div className="mob_location_name">
-              <p className="mb-0 fw-bold">Delhi</p>
+              <p className="mb-0 fw-bold">{location}</p>
             </div>
           </div>
           <div className="mob_sort d-md-none d-sm-flex gap-3 px-2 py-2 border border-1 rounded-2" onClick={()=>{

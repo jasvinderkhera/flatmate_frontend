@@ -2,12 +2,12 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 
 function Home() {
-  const[data1,setData1] = useState([])
-  const[data2,setData2] = useState([])
+  const[data,setData] = useState([])
 
   useEffect(()=>{
     fetch("https://raw.githubusercontent.com/jasvinderkhera/Fake-Server/main/FlatMateFlats.json").then(response => response.json()).then((data) => {
     console.log(data)
+    setData(data)
     
     })
   },[])
@@ -15,7 +15,39 @@ function Home() {
     <div>
         <div className="container spaces_container py-5">
         <div className="flats_container d-flex flex-wrap gap-3">
-       
+       {data.length !== 0 ? data.map((item, i) =>{
+        return  <div class="flats ps-2 pe-1 py-2">
+        <div class="img_container">
+          <img src={item.url} alt="" height="200" width="266" />
+        </div>
+        <div class="flat_details pt-4">
+          <h5>${item.flat_area} <span><i class="fa-solid fa-arrow-up-right-from-square text-secondary"></i></span></h5>
+          <p class="text-secondary">${item.flat_address}</p>
+          <div class="ammenities d-flex gap-2 align-items-center">
+            <span class="text-success fw-bold">FREE AMENITIES</span>
+            <div class="horizon_div"></div>
+          </div>
+          <div class="facilitiess d-flex gap-4 pb-3 pt-2 px-2" id={`facilities-${i}`}>
+            {item.facilities.map((facility,j) => (
+          <div class="box d-flex flex-column align-items-center" key={j}>
+                  <img src={facility.image} alt="" height="20" width="20" />
+                  <p>{facility.facility_name}</p>
+                </div>
+            ))}
+          </div>
+           </div>
+        <div class="rent d-flex align-items-center">
+          <div class="prices py-2 px-2">
+            <p class="mb-1">Rent Starting From</p>
+            <p class="fs-6">₹<b>${item.rent}/month</b></p>
+          </div>
+          <div class="help pb-2 ps-2">
+            <p class="mb-1">Need help?</p>
+            <span class="req_callback">Request callback</span>
+          </div>
+        </div>
+      </div>
+       }) : ""}
        
         </div>
       </div>

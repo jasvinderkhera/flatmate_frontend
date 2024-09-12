@@ -16,13 +16,22 @@ import greater_noida from '../assets/location_images/svg_images/greater_noida.sv
 import pune from '../assets/location_images/svg_images/pune.svg'
 import visakhapatnam from '../assets/location_images/svg_images/visakhapatnam.svg'
 
-function Header() {
+function Header({filteredData, sortByPrice}) {
   let decisionInput = useLocation();
     const [navbar,setNavbar] = useState("hide")
     const [locationModal,setLocationModal] = useState("hide")
     const [location,setLocation] = useState("Delhi")
     const [filterModal,setFilterModal] = useState("hide")
     const [sortModal,setSortModal] = useState("hide")
+    let [searchTerm,setSearchTerm] = useState('')
+
+    let searchLocation = (e)=>{
+      setSearchTerm(e.target.value)
+      filteredData(e.target.value)
+      // console.log(searchTerm)
+    }
+
+    
 
   return (
     <div className="fixed_container">
@@ -49,7 +58,7 @@ function Header() {
         <div className="navbar_right d-flex align-items-center gap-4">
           <div className="search_input">
             <i className="fa-solid fa-magnifying-glass search_input_icon"></i>
-            <input type="text" placeholder="Search location" />
+            <input type="text" placeholder="Search location" onChange={searchLocation} value={searchTerm} />
           </div>
           <div className="menu_bar" onClick={()=> setNavbar("block")}>
             <i className="fa-solid fa-bars fs-5 menu_bar_icon"></i>
@@ -323,10 +332,10 @@ function Header() {
             <label for="cars" className="text-secondary fw-bold mb-0">
               Sort By:
             </label>
-            <select name="cars" id="sortData" className="fw-bold pe-2">
+            <select name="cars" onChange={(e)=>sortByPrice(e.target.value)} id="sortData" className="fw-bold pe-2">
               <option value="Popularity">Popularity</option>
               <option value="lowToHigh">Price: Low to High</option>
-              <option value="highToLow">Price: High to Low</option>
+              <option value="highToLow" >Price: High to Low</option>
             </select>
           </div>
           <div className="mob_location_details d-md-none gap-1 align-items-center border border-1 rounded-2" onClick={()=>{

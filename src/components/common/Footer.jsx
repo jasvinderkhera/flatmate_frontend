@@ -3,7 +3,8 @@ import React from "react";
 function Footer() {
   return (
     <div className="fluid-container footer_container">
-      <div className="footer_boxes_1 px-2">
+     <div className="footer_inner_container">
+     <div className="footer_boxes_1 px-2">
         <div className="footer_box1 mb-5">
           <div className="logo mb-2">
             <span>Flat</span>
@@ -164,6 +165,7 @@ function Footer() {
           </div>
         </div>
       </div>
+     </div>
     </div>
   );
 }

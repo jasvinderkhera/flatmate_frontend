@@ -30,6 +30,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   background-color: white;
+  width: 1518px;
+  margin: auto;
 }
 
 .logo {
@@ -75,6 +77,8 @@ nav {
   justify-content: space-between;
   background-color: white;
   padding: 12px 40px;
+  width: 1518px;
+  margin: auto;
 }
 
 .flatmate_spaces .rightside .select_options {
@@ -357,6 +361,11 @@ cursor: pointer;
   padding: 30px 100px;
 }
 
+.cant_find_inner_container{
+  width: 1280px;
+  margin: auto;
+}
+
 .cant_find_inputs input {
   border: none;
   outline: none;
@@ -377,9 +386,6 @@ cursor: pointer;
 
 .footer_container {
   background-color: rgba(250, 250, 2500);
-  padding: 30px 60px;
-  display: flex;
-  justify-content: space-between;
 }
 
 .spaces_container {
@@ -632,6 +638,14 @@ width: 70px;
 margin-left: 200px;
 }
 
+.footer_inner_container{
+  width: 1518px;
+  margin: auto;
+  padding: 30px 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
 
 /* -----------------------------------------------for home Owner end----------------------------------------------------------------------- */
 
@@ -666,9 +680,17 @@ margin-left: 200px;
     margin-top: 10px;
   }
 
+  nav{
+    width: 100%;
+  }
+
 
   .cant_find_container{
     padding: 30px 16px;
+  }
+
+  .cant_find_inner_container{
+    width: 100%;
   }
    
   .cant_find_inputs{
@@ -688,10 +710,15 @@ margin-left: 200px;
     flex-direction: column;
     padding: 20px 0 !important;
   }
-  .footer_container{
+
+  .footer_inner_container{
+    width: 100%;
+    padding: 20px;
     flex-direction: column;
-    padding: 40px 16px;
   }
+
+ 
+
   .footer_boxes_1{
     padding: 20px 0 !important;
   }

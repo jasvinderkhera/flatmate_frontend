@@ -121,6 +121,7 @@ function Home({ state, preferred }) {
       </div>
 
       <div className="cant_find_container">
+        <div className="cant_find_inner_container">
         <h4>Can't find your perfect home?</h4>
         <p>Let us do the searching for you</p>
         <div className="cant_find_inputs d-flex gap-2 py-4">
@@ -143,6 +144,7 @@ function Home({ state, preferred }) {
             />
           </div>
           <button className="btn px-4 py-2 bg-black text-white">Submit</button>
+        </div>
         </div>
       </div>
 
